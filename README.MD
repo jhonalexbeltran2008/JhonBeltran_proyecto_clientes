@@ -44,3 +44,10 @@ fastapi dev main.py
 
 SERVER  http://127.0.0.1:8000
 Int. Gráfica  http://127.0.0.1:8000/docs 
+
+---
+
+1. Añadir el documento de texto requeriments.txt
+2. Usar en la consola el comando pip list para ver el listado de las instalaciones con sus respectivas versiones
+3. Buscar la version de fastapi 
+4. Dentro de requeriments.txt añadir la siguiente linea: fastapi[standard]>=(Poner aqui la versión de fastapi)
