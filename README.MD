@@ -59,8 +59,8 @@ Int. Gráfica  http://127.0.0.1:8000/docs
 3. **Transacciones:** {id, cantidad, vr_unitario, id_factura}
 
 ---
+# EJECUTAR TODO EN MAIN.PY
 
-# Archivo main.py
 importar las clases: 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel

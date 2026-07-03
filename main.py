@@ -3,11 +3,18 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-lista_clientes = [
-    {"id": 1, "nombre": "Lady", "email": "lady@gmail.com", "edad": 22, "descripcion": "NA"},
-    {"id": 2, "nombre": "Luis", "email": "luis@gmail.com", "edad": 19, "descripcion": "NA"},
-    {"id": 3, "nombre": "Ana", "email": "ana@gmail.com", "edad": 23, "descripcion": "NA"},
-]
+
+
+#crear modelo clientes con los campos{id, nombre, email, descripcion}
+class cliente(BaseModel):
+    id: int
+    nombre: str
+    email: str
+    descripcion: str
+
+lista_clientes:list[cliente] = []
+
+
 
 #endpoint para obtener o listar todos los clientes
 
@@ -25,3 +32,9 @@ def listar_clientes(cliente_id: int):
         if obj_cliente.get("id") == cliente_id:
             return obj_cliente
 
+#endpoint para listar un cliente y agregar a la lista
+
+@app.post("/clientes")
+def crear_clientes(datos_cliente: cliente):
+    lista_clientes.append(datos_cliente)
+    return datos_cliente
