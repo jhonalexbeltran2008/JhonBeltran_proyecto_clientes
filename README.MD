@@ -1,7 +1,10 @@
-# JhonBeltran_Proyecto_clientes
+# Proyecto: Clientes
+
+# Tecnología: FastAPI
 
 # Datos personales
 Jhon Alex Beltran Herrera
 Ficha:3407180
+
 # Descripción
-Proyecto realizado con FastAPI para mostrar un mensaje principal y una lista de clientes.
+Proyecto realizado con FastAPI para mostrar un mensaje principal y una lista de clientes.           
