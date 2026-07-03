@@ -50,7 +50,7 @@ Int. Gráfica  http://127.0.0.1:8000/docs
 1. Añadir el documento de texto requeriments.txt
 2. Usar en la consola el comando pip list para ver el listado de las instalaciones con sus respectivas versiones
 3. Buscar la version de fastapi 
-4. Dentro de requeriments.txt añadir la siguiente linea: fastapi[standard]>=(Poner aqui la versión de fastapi)
+4. Dentro de requirements.txt añadir la siguiente linea: fastapi[standard]>=(Poner aqui la versión de fastapi)
 
 ---
 # Campos 
@@ -127,3 +127,18 @@ Para devolverse:
 3. Crear el endpoint de editar_cliente, aplicando la seguridad y filtrado anteriormente realizado (esquemas de los modelos).
 4. **Como ejercicio** pueden crear el endpoint de eliminar.
 5. Comprobar el funcionamiento de la aplicación, el CRUD completo de clientes.
+
+---
+
+# Crear los endpoint de factura y transacciones vacios
+
+**Como ejercicio** pueden crear los endpoint y realizar el CRUD para `facturas` y `transacciones`, al inicio sin validar, para que funcione y desarrollen la apliación; porque hay que tener encuenta la siguiente NOTA.
+
+**NOTA:** Como estamos simulando una BD, recordar las relaciones:
+
+1. `1` cliente puede tener `0` o `n` facturas
+2. `1` factura puede tener o pertenecer a `1` cliente
+3. `1` factura puede tener `0` o `n` transacciones
+4. `1` transaccion puede pertenecer a `1` factura.
+
+Deben validar cada registro, como por ejemplo no se puede agregar una nueva factura si no existe un cliente.
