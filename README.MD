@@ -84,3 +84,20 @@ from pydantic import BaseModel
 7. Comprobar el funcionamiento de crear_clientes.
 
 NOTA: El ID debe generarse automaticamente en la base de datos, pero como estamos simulando una debemos implementar codigo python, que lo realizaremos mas adelante.
+
+---
+
+# Organizar los modelos, y así editar también la solicitud y respuesta de nuestros endpoint.
+
+1. Editamos la respuesta (response) de la solicitud (GET y POST) de los endpoint, para definir el esquema de los datos que el servidor enviará al cliente.
+
+2. En proyectos, pueden existir muchos modelos.
+Opción 1: Podemos crear un solo archivo, y crear los modelos (clientes, facturas, transacciones).
+Opción 2: Crear una carpeta modelos, y un archivo diferente (clientes, facturas, transacciones).
+
+- Crear carpeta llamada modelos
+- Dentro de la carpeta modelos crear archivos clientes.py y facturas.py
+
+
+3. Creado el modelo, se debe separar el id, creando otros modelo para organizar la aplicación (genera seguridad).
+
