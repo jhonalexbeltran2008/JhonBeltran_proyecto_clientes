@@ -98,6 +98,23 @@ Opción 2: Crear una carpeta modelos, y un archivo diferente (clientes, facturas
 - Crear carpeta llamada modelos
 - Dentro de la carpeta modelos crear archivos clientes.py y facturas.py
 
-
 3. Creado el modelo, se debe separar el id, creando otros modelo para organizar la aplicación (genera seguridad).
+
+---
+
+# Navegar entre commits 
+
+Ejecutar en la consola:
+
+-git status
+-git log --oneline
+-git branch
+-git checkout (Pegar aqui el código de cada commit)
+-git switch para deshacer cambios
+-git branch por si el primero no mostros HEAD en master.
+
+Para devolverse:
+
+-git checkout master
+-git log --oneline
 
