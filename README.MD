@@ -126,4 +126,3 @@ Para devolverse:
 2. El ID debe generarse automáticamente en la base de datos, pero como estamos simulando una BD debemos implementar código Python.
 3. Crear el endpoint de editar_cliente, aplicando la seguridad y filtrado anteriormente realizado (esquemas de los modelos).
 4. **Como ejercicio** pueden crear el endpoint de eliminar.
-5. Comprobar el funcionamiento de la aplicación, el CRUD completo de clientes.
