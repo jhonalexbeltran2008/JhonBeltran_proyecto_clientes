@@ -13,9 +13,8 @@ class ClienteCrear(ClienteBase):
 class ClienteEditar(ClienteBase):
     pass
 
-class ClienteEliminar(ClienteBase):
-    id: int
-    detail: str
+class eliminar_cliente(ClienteBase):
+    pass
     
 class Cliente(ClienteBase):
     id: int | None = None
