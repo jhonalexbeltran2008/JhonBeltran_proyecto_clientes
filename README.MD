@@ -164,3 +164,15 @@ Deben validar cada registro, como por ejemplo no se puede agregar una nueva fact
 2. Comprobar el funcionamiento
 
 ---
+
+# Editar el endpoint crear factura, según el modelo - Continuación
+
+1. Edición del método vr_total del modelo facturas, para que haga el cálculo a las transacciones que pertenecen a esa factura.
+   Para comprobar el funcionamiento del método vr_total debemos:
+2. Editar endpoint de crear transacciones, también puede editar el de listar todas las transacciones.
+3. Comprobar funcionamiento
+
+*Ejercicio Terminar, los endpoint de modificar y eliminar**
+
+---
+
