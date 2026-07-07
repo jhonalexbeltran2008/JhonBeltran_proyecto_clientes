@@ -236,3 +236,13 @@ Ahora con la base de datos:
 1. Editar el endpoint de listar un cliente
 2. Editar el endpoint de editar un cliente
 3. Editar el endpoint de eliminar un cliente
+
+---
+
+# Relaciones
+
+**Relaciones de físicas**
+
+1. Editar modelo facturas, para que cree la tabla (deshabilitar vr_total)
+2. Editar modelo transacciones.
+3. Comprobar funcionamiento.
