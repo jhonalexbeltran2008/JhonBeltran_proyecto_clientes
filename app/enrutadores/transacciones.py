@@ -24,8 +24,14 @@ async def listar_transacciones(sesion : Sesion_dependencia):
 
 # endpoint para obtener o listar una sola transaccion de la lista
 @rutas_transacciones.get("/transacciones/{id_transaccion}", response_model=Transaccion)
-async def listar_transaccion(id_transaccion: int):
-    pass
+async def listar_transaccion(id_transaccion: int, mi_sesion: Sesion_dependencia):
+    transaccion_bd = mi_sesion.get(Transaccion, id_transaccion)
+    if not transaccion_bd:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"La transacción con id {id_transaccion}, no existe."
+        )
+    return transaccion_bd
 
 # endpoint para crear una transaccion y agregar a la lista
 @rutas_transacciones.post("/transacciones/{factura_id}", response_model=Transaccion)
@@ -56,11 +62,30 @@ async def crear_transaccion(factura_id: int, datos_transaccion: TransaccionCrear
 
 #endpoint para editar una transaccion y agregar a la lista
 @rutas_transacciones.patch("/transacciones/{id_transaccion}", response_model=Transaccion)
-async def editar_transaccion(id_transaccion: int, datos_transaccion: Transaccion):
-    pass
+async def editar_transaccion(id_transaccion: int, datos_transaccion: TransaccionEditar, mi_sesion: Sesion_dependencia):
+    transaccion_bd = mi_sesion.get(Transaccion, id_transaccion)
+    if not transaccion_bd:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"La transacción con id {id_transaccion}, no existe."
+        )
+    transaccion_dict = datos_transaccion.model_dump(exclude_unset=True)
+    transaccion_bd.sqlmodel_update(transaccion_dict)
+    mi_sesion.add(transaccion_bd)
+    mi_sesion.commit()
+    mi_sesion.refresh(transaccion_bd)
+    return transaccion_bd
 
 # endpoint para eliminar una transaccion
 
 @rutas_transacciones.delete("/transacciones/{id_transaccion}", response_model=Transaccion)
-async def eliminar_transaccion(id_transaccion: int):
-    pass
+async def eliminar_transaccion(id_transaccion: int, mi_sesion: Sesion_dependencia):
+    transaccion_bd = mi_sesion.get(Transaccion, id_transaccion)
+    if not transaccion_bd:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"La transacción con id {id_transaccion}, no existe."
+        )
+    mi_sesion.delete(transaccion_bd)
+    mi_sesion.commit()
+    return transaccion_bd
