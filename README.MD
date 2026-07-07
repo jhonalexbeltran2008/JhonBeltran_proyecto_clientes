@@ -212,3 +212,18 @@ proyecto_clientes/ <- Carpeta Raiz
 
 ---
 
+# Manejo de BD
+
+**mysql+pymysql://usuario:contraseña@host:puerto/nombre_bd**
+**postgresql://usuario:contraseña@host:puerto/nombre_bd**
+**sqlite:///nombre_bd.sqlite3**
+
+1. Instalar Dependencia sqlmodel
+2. Editar el requirements.txt
+3. Editar el archivo conexion_bd.py, nombre bd, url bd, motor, crear sesion, inyeccion dependencia, definir metodo para crear las tablas.
+4. Editar el archivo enrutador cliente, importar la dependencia de sesion creada anteriormente, y utilizar el add, commit, y refresh de la sesion, y poder guardar los datos en la bd.
+5. Editar el archivo modelo cliente, con la propiedades de Sqlmodel
+6. Editar archivo main.py, e importar el metodo crear las tablas.
+7. Comprobar el funcionamiento.
+
+---
