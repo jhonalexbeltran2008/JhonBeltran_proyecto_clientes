@@ -19,3 +19,8 @@ class eliminar_cliente(ClienteBase):
     
 class Cliente(ClienteBase, table=True):
     id: int | None = Field(default=None, primary_key=True)
+    #relacion virtual con factura
+    factura: list["factura"] = Relationship(back_populates="cliente")
+
+class ClienteLeer(ClienteBase):
+    id: int

@@ -251,3 +251,14 @@ Ahora con la base de datos:
 **Relaciones de virtuales deben ser bidireccionales**
 
 ---
+# Relaciones fin
+
+**Relaciones de virtuales deben ser bidireccionales**
+
+**NOTA: punto de partida factura(modelo)**
+
+1. Editar archivo modelo clientes, crear modelo de lectura o presentacion al usuario-cliente.
+2. Editar archivo modelo facturas, crear modelo de lectura o presentacion al usuario-cliente.
+3. Editar archivo modelo transacciones, crear modelo de lectura o presentacion al usuario-cliente.
+
+---
