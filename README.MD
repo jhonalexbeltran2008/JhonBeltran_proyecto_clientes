@@ -155,3 +155,12 @@ Deben validar cada registro, como por ejemplo no se puede agregar una nueva fact
 1. Editar el endpoint listar_facturas, todas las facturas.
 2. Editar el endpoint listar_factura, una factura.
 3. Comprobar funcionamiento.
+
+---
+
+# Editar el endpoint crear factura, según el modelo
+
+1. Editar el endpoint crear factura
+2. Comprobar el funcionamiento
+
+---
