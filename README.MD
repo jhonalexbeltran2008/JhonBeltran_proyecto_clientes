@@ -187,7 +187,7 @@ proyecto_clientes/ <- Carpeta Raiz
 │   │   ├── __init__.py
 │   │   ├── clientes.py
 │   │   ├── facturas.py
-│   │   └── trafdfnsacciones.py
+│   │   └── transacciones.py
 │   └── enrutador/ <- Carpeta para los endpoints o rutas (APIRouter)
 │       ├── __init__.py
 │       ├── clientes.py
@@ -205,7 +205,10 @@ proyecto_clientes/ <- Carpeta Raiz
 3. Comprobar las rutas ahora no existen en la UI de Swagger
 4. Incluir en main.py las rutas
 
----
+# Manejo de Enrutadores o Routers
 
-# Manejo de BD SQLite
+1. Explicación solo con el archivo modelos-enrutadores de transacciones, e importaciones.
+2. Comprobar funcionamiento de los endpoint.
+
+---
 
