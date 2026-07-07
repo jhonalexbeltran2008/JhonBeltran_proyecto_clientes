@@ -227,3 +227,12 @@ proyecto_clientes/ <- Carpeta Raiz
 7. Comprobar el funcionamiento.
 
 ---
+
+# Aplicar el CRUD completo al endpoint Clientes
+
+En el endpoint Listar todos y crear clientes es listo.
+Ahora con la base de datos:
+
+1. Editar el endpoint de listar un cliente
+2. Editar el endpoint de editar un cliente
+3. Editar el endpoint de eliminar un cliente
