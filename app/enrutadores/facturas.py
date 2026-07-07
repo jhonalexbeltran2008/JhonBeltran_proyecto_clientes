@@ -2,7 +2,8 @@ from fastapi import APIRouter, HTTPException, status
 from ..modelos.facturas import Factura, FacturaBase, FacturaCrear, FacturaEditar
 from ..modelos.clientes import Cliente
 from ..listas import lista_clientes, lista_facturas
-
+from ..conexion_db import Sesion_dependencia
+from sqlmodel import select
 
 rutas_facturas = APIRouter()
 
@@ -15,7 +16,10 @@ rutas_facturas = APIRouter()
 # endpoint listar todas las facturas
 
 @rutas_facturas.get("/facturas", response_model=list[Factura])
-async def listar_facturas():
+async def listar_facturas(sesion: Sesion_dependencia):
+    #select * from factura
+    consulta = select(Factura)
+    lista_facturas = sesion.exec(consulta).all()
     return lista_facturas
 
 # endpoint para obtener o listar una sola factura de la lista
@@ -35,23 +39,24 @@ async def listar_factura(factura_id: int):
 # endpoint para crear una factura y agregar a la lista
 
 @rutas_facturas.post("/facturas/{cliente_id}", response_model=Factura)
-async def crear_factura(cliente_id: int, datos_factura: FacturaCrear):
-   #Buscar cliente
-    cliente_encontrado = None
-    for cliente in lista_clientes:
-         if cliente.id == cliente_id:
-            cliente_encontrado = cliente
-            break
+async def crear_factura(cliente_id: int, datos_factura: FacturaCrear, sesion: Sesion_dependencia):
+   #Buscar cliente en bd
+
+
+    cliente_encontrado = sesion.get(Cliente, cliente_id)
     # Mensaje si no existe el cliente
     if not cliente_encontrado:
          raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=f"El cliente con id {cliente_id}, no existe.")
 
      #Validar datos de la factura
-    factura_val = Factura.model_validate(datos_factura.model_dump())
-    factura_val.cliente = cliente_encontrado
-    # id de la factura
-    factura_val.id = len(lista_facturas) + 1
-    lista_facturas.append(factura_val)
+    factura_dict = datos_factura.model_dump()
+    factura_dict["cliente_id"] = cliente_id
+    factura_val = Factura.model_validate(factura_dict)
+  
+   #guardar en bd
+    sesion.add(factura_val)
+    sesion.commit()
+    sesion.refresh(factura_val)
     return factura_val
 
 

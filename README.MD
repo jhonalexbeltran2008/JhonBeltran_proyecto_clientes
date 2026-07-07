@@ -241,8 +241,13 @@ Ahora con la base de datos:
 
 # Relaciones
 
-**Relaciones de físicas**
+1. Editar los enrutadores, para ver el funcionamiento con la base de datos
+2. Comprobar funcionamiento.
 
-1. Editar modelo facturas, para que cree la tabla (deshabilitar vr_total)
-2. Editar modelo transacciones.
-3. Comprobar funcionamiento.
+---
+
+# Relaciones
+
+**Relaciones de virtuales deben ser bidireccionales**
+
+---
