@@ -176,3 +176,23 @@ Deben validar cada registro, como por ejemplo no se puede agregar una nueva fact
 
 ---
 
+# Estructurar el proyecto
+
+proyecto_clientes/ <- Carpeta Raiz
+├── app/ <- Carpeta principal de la aplicación
+│   ├── __init__.py <- Archivo vacío para que Python reconozca el módulo
+│   ├── main.py <- Punto de entrada de la API
+│   ├── conexion_bd.py <- Configuración de la conexión a la base de datos
+│   ├── modelos/ <- Carpeta para los modelos de Base de Datos (SQLAlchemy)
+│   │   ├── __init__.py
+│   │   ├── clientes.py
+│   │   ├── facturas.py
+│   │   └── transacciones.py
+│   └── enrutador/ <- Carpeta para los endpoints o rutas (APIRouter)
+│       ├── __init__.py
+│       ├── clientes.py
+│       └── facturas.py
+├── .mi_env <- Entorno virtual
+├── requirements.txt <- Dependencias del proyecto, si es con uv pyproject.toml
+└── README.md <- Documentación de nuestro proceso en el desarrollo del proyecto.
+
