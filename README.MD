@@ -187,7 +187,7 @@ proyecto_clientes/ <- Carpeta Raiz
 │   │   ├── __init__.py
 │   │   ├── clientes.py
 │   │   ├── facturas.py
-│   │   └── transacciones.py
+│   │   └── trafdfnsacciones.py
 │   └── enrutador/ <- Carpeta para los endpoints o rutas (APIRouter)
 │       ├── __init__.py
 │       ├── clientes.py
@@ -195,4 +195,17 @@ proyecto_clientes/ <- Carpeta Raiz
 ├── .mi_env <- Entorno virtual
 ├── requirements.txt <- Dependencias del proyecto, si es con uv pyproject.toml
 └── README.md <- Documentación de nuestro proceso en el desarrollo del proyecto.
+
+---
+
+# Manejo de Enrutadores o Routers
+
+1. Editar los archivos de la carpeta enrutador (instanciar la clase ROUTER)
+2. Cortar el código de las rutas del archivo main.py y copiarlos según corresponda
+3. Comprobar las rutas ahora no existen en la UI de Swagger
+4. Incluir en main.py las rutas
+
+---
+
+# Manejo de BD SQLite
 
