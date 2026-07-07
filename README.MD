@@ -146,3 +146,12 @@ Para devolverse:
 
 Deben validar cada registro, como por ejemplo no se puede agregar una nueva factura si no existe un cliente.
 
+---
+
+# Editar el endpoint listar facturas, listar una factura según el modelo.
+
+**NOTA:**Editar manejo de excepciones.
+
+1. Editar el endpoint listar_facturas, todas las facturas.
+2. Editar el endpoint listar_factura, una factura.
+3. Comprobar funcionamiento.
